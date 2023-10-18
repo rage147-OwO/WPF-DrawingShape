@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas x:Name="canvas" MouseMove="MouseMoveHandler" MouseDown="MouseDownHandler"
+          Background="LemonChiffon">
+            <Ellipse Name="ellipse" Fill="Red" 
+             Width="10" Height="10" Canvas.Left="{Binding PX}" Canvas.Top="{Binding PY}"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="143" Canvas.Left="10" Canvas.Top="10" Cursor="">
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="Mouse Position {0}, {1}">
+                        <Binding Path="PX"/>
+                        <Binding Path="PY"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+            
+
+
+
+
+        </Canvas>
+    </Grid>
+</Window>
